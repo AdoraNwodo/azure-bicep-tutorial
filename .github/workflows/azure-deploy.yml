@@ -22,4 +22,4 @@ jobs:
     - uses: azure/arm-deploy@v1
       with:
         resourceGroupName: "bicep-test-rg"
-        template: "./module 2 - lesson 3 (create your first bicep template)/main.bicep"
+        template: ./main.bicep
