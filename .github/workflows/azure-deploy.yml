@@ -13,15 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        path: repo
     - name: Log in with Azure
       uses: azure/login@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
-    - name: 'List files'
-        run: ls
-#    - uses: azure/arm-deploy@v1
-#      with:
-#        resourceGroupName: "bicep-test-rg"
-#        template: main.bicep
+    - uses: azure/arm-deploy@v1
+      with:
+        resourceGroupName: "bicep-test-rg"
+        template: main.bicep
