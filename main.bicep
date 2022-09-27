@@ -1,17 +1,18 @@
 targetScope = 'resourceGroup'
+param location string = 'westus'
 
 resource hostingPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'bicep-tutorial-plan'
-  location: 'westus'
+  location: location
   sku: {
-    name: 'B1'
-    tier: 'Basic'
+    name: 'F1'
+    tier: 'Free'
   }
 }
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: 'biceptutorialstore'
-  location: 'westus'
+  location: location
   sku: {
     name: 'Standard_LRS'
   }
@@ -20,7 +21,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 
 resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   name: 'bicep-tutorial-adora-app'
-  location: 'westus'
+  location: location
   properties: {
     serverFarmId: hostingPlan.id
     httpsOnly: true
