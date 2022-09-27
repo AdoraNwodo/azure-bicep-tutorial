@@ -19,7 +19,9 @@ jobs:
       uses: azure/login@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
-    - uses: azure/arm-deploy@v1
-      with:
-        resourceGroupName: "bicep-test-rg"
-        template: main.bicep
+    - name: 'List files'
+        run: ls
+#    - uses: azure/arm-deploy@v1
+#      with:
+#        resourceGroupName: "bicep-test-rg"
+#        template: main.bicep
