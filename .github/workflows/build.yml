@@ -1,0 +1,13 @@
+name: Second workflow
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Running second job'
+        run: echo "This is the second job from VS code!"
