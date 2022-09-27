@@ -1,10 +1,10 @@
 targetScope = 'resourceGroup'
 
 param location string = 'westus'
-param resourceBaseName string = 'adora-bicep-tutorial'
-param storageAccountName string = 'adorastoreiac'
+param resourceBaseName string = 'adora-ts-bicep-tutorial'
+param storageAccountName string = 'adorastoretsiac'
 
-module webApp 'modules/webApp.bicep' = {
+module webApp 'ts:9dcdcac6-58e7-4cda-8db2-e9a418f6798e/adora-test-rg/WebApplication:1.0' = {
   name: 'app-service-deployment-bicep'
   params: {
     appServiceAppName: '${resourceBaseName}-app'
